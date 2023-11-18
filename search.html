@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./assets/css/circular-font.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body class>
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebar-left" class="d-none d-xl-block col-md-2 bg-black text-white pe-0">
+          <div class="btn-group">
+            <button
+              class="btn btn-black text-white btn-sm"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <i class="bi bi-three-dots"></i>
+            </button>
+            <ul class="dropdown-menu"></ul>
+          </div>
+          <div id="icon-navbar">
+            <ul class="navbar-nav mt-2">
+              <li class="nav-item">
+                <a href="./index.html"
+                  ><svg
+                    data-encore-id="icon"
+                    role="img"
+                    aria-hidden="true"
+                    class="Svg-sc-ytk21e-0 iYxpxA home-icon"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
+                    ></path>
+                  </svg>
+                  Homepage</a
+                >
+              </li>
+              <li class="nav-item">
+                <svg
+                  data-encore-id="icon"
+                  role="img"
+                  aria-hidden="true"
+                  class="Svg-sc-ytk21e-0 iYxpxA search-icon"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+                  ></path>
+                </svg>
+                Cerca
+              </li>
+
+              <li class="nav-item">
+                <a href="#"
+                  ><svg
+                    data-encore-id="icon"
+                    role="img"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    class="Svg-sc-ytk21e-0 iYxpxA"
+                  >
+                    <path
+                      d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                    ></path>
+                  </svg>
+                  La tua libreria</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div id="myfunction" class="mt-3 border-bottom border-secondary">
+            <ul class="properties px-0 py-2">
+              <li class="item-function">
+                <a href="#" onclick="showAlert()"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-plus"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+                    />
+                  </svg>
+                  Crea Playlist</a
+                >
+              </li>
+              <li class="item-function">
+                <a href="#"><i class="heart bi bi-heart-fill me-1"></i>Brani che ti piacciono</a>
+              </li>
+              <li class="item-function">
+                <a href="#"><i class="mark bi bi-bookmark me-1"></i>I tuoi episodi</a>
+              </li>
+            </ul>
+          </div>
+          <div id="playlistGroup" class="d-none d-xl-block">
+            <ul class="px-0">
+              <li class="d-flex justify-content-between"><a href="#">Gym songs</a>🥊</li>
+              <li><a href="#">EDM House</a></li>
+              <li><a href="#">Italian Pop</a></li>
+              <li><a href="#">Relax Beat</a></li>
+              <li><a href="#">Concentrazione massima</a></li>
+              <li class="d-flex justify-content-between"><a href="#">By the piano</a>🎹</li>
+              <li class="d-flex justify-content-between"><a href="#">Verso il cielo</a>🛫</li>
+              <li><a href="#">This is Il Tre</a></li>
+              <li class="d-flex justify-content-between"><a href="#">Christmas Songs</a>🎄</li>
+              <li><a href="#">Radio Alan Walker</a></li>
+              <li><a href="#">Indie italiano</a></li>
+              <li><a href="#">Summer Vibes</a></li>
+              <li><a href="#">Classic 99/00</a></li>
+              <li><a href="#">Love you</a></li>
+              <li><a href="#">Che fai qua</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <main id="content" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8 scrollable ms-auto">
+          <a id="back" href="javascript:history.back()" class="BB btn-B"><i class="bi bi-chevron-left"></i></a>
+          <a id="next" href="javascript:history.forward()" class="BB btn-N"><i class="bi bi-chevron-right"></i></a>
+
+          <div id="searchContainer">
+            <input type="text" name="searchBar" id="search" placeholder=" Cosa vuoi ascoltare?" />
+          </div>
+
+          <div class="cardContainer m-3">
+            <div
+              class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-4 flex-wrap justify-content-center"
+            >
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Pop</h5>
+                </div>
+                <img src="./assets/imgs/search/image-42.png" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Rap</h5>
+                </div>
+                <img src="./assets/imgs/search/image-49.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Rock</h5>
+                </div>
+                <img src="./assets/imgs/search/image-7.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">League Of Legends</h5>
+                </div>
+                <img src="./assets/imgs/search/image-30.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Hit 2023</h5>
+                </div>
+                <img src="./assets/imgs/search/image-47.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Podcast</h5>
+                </div>
+                <img src="./assets/imgs/search/image-46.jpeg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Classic</h5>
+                </div>
+                <img src="./assets/imgs/search/image-29.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Raggae</h5>
+                </div>
+                <img src="./assets/imgs/search/image-5.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Beast Mood</h5>
+                </div>
+                <img src="./assets/imgs/search/image-8.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Arab Pop</h5>
+                </div>
+                <img src="./assets/imgs/search/image-41.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">K-pop</h5>
+                </div>
+                <img src="./assets/imgs/search/image-35.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+              <div class="searchCard card m-2">
+                <div class="card-body">
+                  <h5 class="cardSearchTitle">Afro Hits</h5>
+                </div>
+                <img src="./assets/imgs/search/image-28.jpg" class="card-img-bottom rotated-img" alt="Immagine 1" />
+              </div>
+            </div>
+          </div>
+
+          <section id="thisAlbum">
+            <div class="searchContainer d-flex">
+              <ul id="songList" class="justify-content-center"></ul>
+            </div>
+          </section>
+        </main>
+        <aside id="sidebar-right" class="d-none d-xl-block d-md-none d-sm-none col-md-2 bg-black text-white">
+          <div class="d-flex justify-content-between mt-2 mb-3">
+            <h5>Attività amici</h5>
+            <div>
+              <a href="#"><i class="bi bi-person-plus"></i></a>
+              <a href="#"><i class="bi bi-x"></i></a>
+            </div>
+          </div>
+          <div id="cardFriends">
+            <div class="row align-items-center">
+              <div class="col-md-4 mt-3 pb-5">
+                <img src="./assets/imgs/search/image-3.jpg" class="img-fluid rounded-circle" width="35px" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body mb-3">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title mb-0">Charlie Hookman</h5>
+                    <p class="small mb-0">4 ore</p>
+                  </div>
+
+                  <p class="card-text small mb-0">In Camera <i class="bi bi-dot"></i> Yumi Zouma</p>
+                  <p><i class="bi bi-stop-circle"></i> EP III</p>
+                </div>
+              </div>
+              <div class="col-md-4 mt-3 pb-5">
+                <img src="./assets/imgs/search/image-3.jpg" class="img-fluid rounded-circle" width="35px" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body mb-3">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title mb-0">LightDark02</h5>
+                    <p class="small mb-0">8 ore</p>
+                  </div>
+                  <p class="card-text small mb-0">Aimed To Kill <i class="bi bi-dot"></i> Jade LeMac</p>
+                  <p><i class="bi bi-stop-circle"></i> Aimed To Kill</p>
+                </div>
+              </div>
+              <div class="col-md-4 mt-3 pb-5">
+                <img src="./assets/imgs/search/image-3.jpg" class="img-fluid rounded-circle" width="35px" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body mb-3">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="card-title mb-0">Valeria Traverso</h5>
+                    <p class="small mb-0">3 giorni</p>
+                  </div>
+                  <p class="card-text small mb-0">New Kings <i class="bi bi-dot"></i> Sleeping Wall</p>
+                  <p><i class="bi bi-music-note-beamed"></i> Twint Badass Mood</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <footer id="playbar" class="bg-dark text-white">
+      <div class="musicPlayer d-flex justify-content-between align-items-center">
+        <div class="songsBar d-flex flex-row justify-content-start align-items-center">
+          <div class="songsInfo d-flex align-items-center">
+            <div class="songsImg">
+              <img id="playerImageSong" src="./assets/imgs/main/image-8.jpg" alt="" width="100px" />
+            </div>
+            <div class="songsDescription ms-3 d-none d-sm-block">
+              <p class="songsTitle">Titolo</p>
+              <p class="songsArtist">Artista</p>
+            </div>
+          </div>
+          <div class="icons ps-2">
+            <a href="#"><i class="bi bi-heart d-none d-sm-block"></i></a>
+          </div>
+        </div>
+        <div class="progress-controller d-flex justify-content-center flex-column align-items-center">
+          <div class="control-buttons d-flex align-items-center">
+            <a href="#"><i class="bi bi-shuffle d-none d-sm-block"></i></a>
+            <a href="#"><i class="bi bi-skip-start-circle"></i></a>
+            <a id="playButton" href="#"><i class="play-pause bi bi-play-circle"></i></a>
+            <a id="pauseButton" class="d-none" href="#"><i class="play-pause bi bi-pause-circle"></i></a>
+            <a href="#"><i class="bi bi-skip-end-circle"></i></a>
+            <a href="#"><i class="bi bi-repeat d-none d-sm-block"></i></a>
+          </div>
+          <div class="progressContainer d-flex align-items-center justify-content-center">
+            <span id="currentTime"></span>
+            <div class="progressBar">
+              <div class="progress w-100 bg-dark">
+                <input id="timeRange" style="width: 100%; accent-color: lime" type="range" min="0" max="100" />
+              </div>
+            </div>
+            <span id="songTimeAll"></span>
+          </div>
+        </div>
+        <div class="otherFeatures d-flex flex-row justify-content-between">
+          <a href="#"><i class="bi bi-menu-button-wide d-none d-sm-block"></i></a>
+          <div class="volumeBar d-flex align-items-center ps-3 pe-3">
+            <a href="#"><i class="bi bi-volume-up d-none d-sm-block"></i></a>
+            <div class="progressBar">
+              <div class="progress bg-dark">
+                <input
+                  style="width: 100%; accent-color: lime"
+                  id="player"
+                  type="range"
+                  min="0"
+                  max="100"
+                  class="volume-range"
+                />
+              </div>
+            </div>
+            <a href="#"><i class="bi bi-arrows-angle-expand d-none d-sm-block"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="bg-black sticky-bottom d-block d-md-none p-1">
+      <nav class="navbar">
+        <div class="container-fluid d-flex flex-nowrap">
+          <div id="icon-navbar" class="d-flex">
+            <a href="./index.html" class="text-center"
+              ><svg
+                data-encore-id="icon"
+                role="img"
+                aria-hidden="true"
+                class="Svg-sc-ytk21e-0 iYxpxA home-icon"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 0 1 3 0l7.5 4.33a2 2 0 0 1 1 1.732V21a1 1 0 0 1-1 1h-6.5a1 1 0 0 1-1-1v-6h-3v6a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.577a2 2 0 0 1 1-1.732l7.5-4.33z"
+                ></path></svg
+            ></a>
+          </div>
+          <div id="icon-navbar" class="d-flex">
+            <a href="./search.html" class="text-center"
+              ><svg
+                data-encore-id="icon"
+                role="img"
+                aria-hidden="true"
+                class="Svg-sc-ytk21e-0 iYxpxA search-icon"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+                ></path></svg
+            ></a>
+          </div>
+          <div id="icon-navbar" class="d-flex">
+            <a href="#" class="text-center"
+              ><svg
+                data-encore-id="icon"
+                role="img"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                class="Svg-sc-ytk21e-0 iYxpxA"
+              >
+                <path
+                  d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z"
+                ></path></svg
+            ></a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/search.js"></script>
+  </body>
+</html>
